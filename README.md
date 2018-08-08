@@ -14,6 +14,8 @@ gem 'baidu-translate-api'
 ## Usage
 
 ```
+require 'baidu-translate-api'
+
 appid = '2018nnnnnn'
 secret_key = 'foobarbaz'
 
