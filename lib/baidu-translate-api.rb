@@ -5,6 +5,8 @@ require 'open-uri'
 require 'uri'
 
 class BaiduTranslateApi
+  VERSION = '0.1.0'
+
   SALT_MAXNUM = 10000000
   HTTP_ENDPOINT = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
   HTTPS_ENDPOINT = 'https://fanyi-api.baidu.com/api/trans/vip/translate'
