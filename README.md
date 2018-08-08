@@ -1,8 +1,7 @@
-# Baidu::Translate::Api
+# Baidu translate api client for Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/baidu/translate/api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+- https://api.fanyi.baidu.com/api/trans/product/apidoc
+- http://api.fanyi.baidu.com/api/trans/product/prodinfo
 
 ## Installation
 
@@ -12,24 +11,26 @@ Add this line to your application's Gemfile:
 gem 'baidu-translate-api'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install baidu-translate-api
-
 ## Usage
 
-TODO: Write usage instructions here
+```
+appid = '2018nnnnnn'
+secret_key = 'foobarbaz'
 
-## Development
+bta = BaiduTranslateApi.new(appid: appid, secret_key: secret_key)
+puts bta.translate("hello\nWhere are you from?")
+puts '---'
+puts bta.translate("こんにちは\nあなたはどこから来ましたか?")
+puts '---'
+puts bta.translate("早上好", from: :zh, to: :jp)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/baidu-translate-api.
+```
+你好
+你从哪里来的？
+---
+你好
+你从哪里来的？
+---
+おはよう
+```
