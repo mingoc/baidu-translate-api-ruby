@@ -35,7 +35,7 @@ class BaiduTranslateApi
       appid: self.appid,
       sign: sign,
     }
-    open(endpoint + '?' + URI.encode_www_form(params))
+    URI.open(endpoint + '?' + URI.encode_www_form(params))
   end
 
   def translate(word, from: self.default_from, to: self.default_to)
